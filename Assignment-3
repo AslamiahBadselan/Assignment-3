@@ -1,1 +1,65 @@
 # Assignment-3
+
+#SAVE AND WRITING FILE USING NUMPY
+#example 1
+import numpy as np
+
+# Create a numpy array
+array1 = np.array([1, 2, 3, 4, 5])
+
+# Save the array to a binary file
+np.save('array1.npy', array1)
+
+print("Array saved as array1.npy")
+
+#example 2
+import numpy as np
+
+# Create a numpy array
+array2 = np.array([[1.1, 2.2, 3.3], [4.4, 5.5, 6.6]])
+
+# Save the array to a text file
+np.savetxt('array2.txt', array2, delimiter=',')
+
+print("Array saved as array2.txt")
+
+#example 3
+import numpy as np
+# Create numpy arrays
+array3 = np.array([7, 8, 9])
+array4 = np.array([10, 11, 12])
+
+# Save the arrays to a compressed npz file
+np.savez_compressed('arrays.npz', array3=array3, array4=array4)
+
+print("Arrays saved as arrays.npz")
+
+
+#LOAD DATA FROM FILES USING NUMPY
+#example 1
+ import numpy as np
+
+# Load the array from the binary file
+loaded_array1 = np.load('array1.npy')
+
+print("Array loaded from array1.npy:")
+print(loaded_array1)
+
+#example 2
+import numpy as np
+
+# Load the array from the text file
+loaded_array2 = np.loadtxt('array2.txt', delimiter=',')
+
+print("Array loaded from array2.txt:")
+print(loaded_array2)
+
+#example 3
+import numpy as np
+
+# Load the arrays from the compressed file
+loaded = np.load('arrays.npz')
+
+print("Arrays loaded from arrays.npz:")
+print("array3:", loaded['array3'])
+print("array4:", loaded['array4'])
